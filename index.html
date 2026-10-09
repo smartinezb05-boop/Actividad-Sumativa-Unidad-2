@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservas Riviera Maya</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="encabezado">
+    <div>
+      <h1>Reservas Riviera Maya</h1>
+      <p>Selecciona y calcula tu experiencia turística</p>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <section class="controles" aria-label="Controles del catálogo">
+      <input id="buscador" type="search" placeholder="Buscar experiencia...">
+      
+      <select id="filtroCategoria">
+        <option value="todas">Todas las categorías</option>
+        <option value="naturaleza">Naturaleza</option>
+        <option value="cultura">Cultura</option>
+        <option value="aventura">Aventura</option>
+        <option value="gastronomia">Gastronomía</option>
+        <option value="relajacion">Relajación</option>
+      </select>
+
+      <input id="filtroPrecio" type="number" placeholder="Precio máximo ($)" min="0">
+
+      <select id="ordenPrecio">
+        <option value="normal">Orden original</option>
+        <option value="ascendente">Menor precio</option>
+        <option value="descendente">Mayor precio</option>
+      </select>
+    </section>
+
+    <!-- Contenedor para mostrar mensajes en vez de alert() -->
+    <div id="contenedorMensajes"></div>
+
+    <p id="estado" class="estado">Cargando experiencias...</p>
+    <section id="catalogo" class="catalogo"></section>
+
+    <section class="resumen">
+      <h2>Mi reservación</h2>
+      <div id="listaReservas"><p>No hay experiencias seleccionadas.</p></div>
+      
+      <div class="totales">
+        <p class="total">Personas reservadas: <span id="totalPersonas">0</span></p>
+        <p class="total">Total: <span id="total">$0 MXN</span></p>
+      </div>
+
+      <!-- Botón principal para vaciar -->
+      <button id="btnVaciar" class="btn-peligro" style="display: none;">Vaciar reservación</button>
+      
+      <!-- Contenedor de confirmación en pantalla -->
+      <div id="confirmacionVaciar" class="confirmacion-oculta">
+        <p>¿Estás seguro de que deseas vaciar toda tu reservación?</p>
+        <div class="confirmacion-botones">
+          <button id="btnConfirmarVaciar" class="btn-peligro">Sí, vaciar</button>
+          <button id="btnCancelarVaciar" class="btn-secundario">Cancelar</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><p>Proyecto académico de frontend</p></footer>
+</body>
+</html>
